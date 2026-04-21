@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honey Juror - AI-Powered Jury Selection for Lawyers | $99</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: #1a365d;
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fbbf24;
+        }
+        
+        .logo span {
+            color: white;
+        }
+        
+        .cta-button {
+            background: #fbbf24;
+            color: #1a365d;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(251, 191, 36, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            color: #cbd5e0;
+        }
+        
+        .price-tag {
+            background: #fbbf24;
+            color: #1a365d;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-size: 2em;
+            font-weight: bold;
+            display: inline-block;
+            margin: 20px 0;
+        }
+        
+        /* Problem Section */
+        .problem {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #1a365d;
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .problem-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #e53e3e;
+        }
+        
+        .problem-card h3 {
+            color: #e53e3e;
+            margin-bottom: 15px;
+        }
+        
+        /* Solution Section */
+        .solution {
+            padding: 80px 0;
+            background: #f0f9ff;
+        }
+        
+        .solution-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .solution-icon {
+            font-size: 4em;
+            color: #38a169;
+            margin-bottom: 20px;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            color: #4299e1;
+            margin-bottom: 20px;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: #f0f9ff;
+        }
+        
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .step-number {
+            background: #4299e1;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #fbbf24;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #1a365d;
+        }
+        
+        /* Pricing */
+        .pricing {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .pricing-card {
+            background: white;
+            color: #333;
+            padding: 50px;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .pricing-price {
+            font-size: 4em;
+            color: #fbbf24;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+        
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Guarantee */
+        .guarantee {
+            padding: 60px 0;
+            background: #f0f9ff;
+            text-align: center;
+        }
+        
+        .guarantee-badge {
+            background: #38a169;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: #1a365d;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1a365d;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2em;
+            }
+            
+            .section-title {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">🍯 <span>Honey Juror</span></div>
+            <a href="#pricing" class="cta-button">Get Started - $99</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Stop Guessing. Start Winning.</h1>
+            <p class="hero-subtitle">AI-Powered Jury Selection That Gives You the Winning Edge</p>
+            <div class="price-tag">Only $99</div>
+            <p>Transform hours of jury research into minutes of actionable insights</p>
+            <a href="#pricing" class="cta-button" style="margin-top: 30px; font-size: 1.2em;">Try Honey Juror Risk-Free</a>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem" id="problem">
+        <div class="container">
+            <h2 class="section-title">The Jury Selection Nightmare Every Lawyer Faces</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>⏰ Wasted Time</h3>
+                    <p>Spending 20+ hours researching potential jurors only to make gut-feeling decisions.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>🎲 Unreliable Gut Instincts</h3>
+                    <p>Relying on intuition instead of data-driven insights about juror biases and tendencies.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>💸 Costly Mistakes</h3>
+                    <p>One wrong juror can cost you the case - and thousands in billable hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="container">
+            <h2 class="section-title">Introducing Honey Juror</h2>
+            <div class="solution-card">
+                <div class="solution-icon">🍯</div>
+                <h3 style="font-size: 2em; margin-bottom: 20px; color: #1a365d;">AI-Powered Jury Intelligence</h3>
+                <p style="font-size: 1.2em; margin-bottom: 30px;">Honey Juror analyzes social media, public records, and demographic data to give you actionable insights on every potential juror in minutes - not hours.</p>
+                <p style="font-size: 1.1em; color: #4a5568;">Stop playing guessing games. Start making data-driven decisions that win cases.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">What Makes Honey Juror Different</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI-Powered Analysis</h3>
+                    <p>Advanced algorithms analyze juror backgrounds, social media, and public records to identify biases and predict behavior.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Get comprehensive juror profiles in 5 minutes instead of 5 hours. Focus on strategy, not research.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Actionable Insights</h3>
+                    <p>Clear, concise reports with specific recommendations on which jurors to select and which to avoid.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Ethical & Compliant</h3>
+                    <p>100% compliant with legal and ethical guidelines for jury research. Your secret weapon stays secret.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How Honey Juror Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Upload Jury List</h3>
+                    <p>Simply upload your list of potential jurors (names are enough to start).</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>AI Analysis</h3>
+                    <p>Our AI scans public records, social media, and demographic databases.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Get Your Report</h3>
+                    <p>Receive a detailed report with juror scores, risk assessments, and recommendations.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Win Your Case</h3>
+                    <p>Make data-driven decisions during voir dire with confidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Lawyers Are Saying</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Honey Juror cut my jury research time from 15 hours to 45 minutes. We won a case I was sure we'd lose."</p>
+                    <p class="testimonial-author">- Sarah M., Criminal Defense Attorney</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The insights on juror biases were spot-on. This is now essential for every case I take."</p>
+                    <p class="testimonial-author">- James R., Personal Injury Lawyer</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"For $99, this is the best investment I've made in my practice. The ROI is incredible."</p>
+                    <p class="testimonial-author">- Michael T., Family Law Attorney</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Simple, Transparent Pricing</h2>
+            <div class="pricing-card">
+                <h3 style="font-size: 2em; color: #1a365d; margin-bottom: 20px;">Honey Juror Pro</h3>
+                <div class="pricing-price">$99</div>
+                <p style="color: #4a5568; margin-bottom: 30px;">One-time payment for comprehensive jury analysis</p>
+                
+                <ul class="pricing-features">
+                    <li>✅ Up to 50 jurors analyzed</li>
+                    <li>✅ Comprehensive bias detection</li>
+                    <li>✅ Social media analysis</li>
+                    <li>✅ Demographic profiling</li>
+                    <li>✅ Risk assessment scoring</li>
+                    <li>✅ Priority support</li>
+                    <li>✅ 30-day money back guarantee</li>
+                </ul>
+                
+                <a href="#" class="cta-button" style="display: block; margin: 30px auto 0; max-width: 300px;">Get Honey Juror Now</a>
+                
+                <p style="margin-top: 20px; color: #718096; font-size: 0.9em;">No subscription. No hidden fees. Just results.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee -->
+    <section class="guarantee">
+        <div class="container">
+            <div class="guarantee-badge">30-Day Money Back Guarantee</div>
+            <p style="margin-top: 20px; font-size: 1.1em; max-width: 600px; margin: 20px auto;">If Honey Juror doesn't save you at least 10 hours of research time or provide valuable insights for your next case, we'll refund every penny. No questions asked.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <
