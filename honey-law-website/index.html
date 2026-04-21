@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honey.law | AI Jury Intelligence Platform for Trial Lawyers</title>
+    <meta name="description" content="The AI-powered jury intelligence platform that gives trial lawyers the winning edge. Predict juror biases, save research time, and win more cases.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Georgia', serif; line-height: 1.6; color: #1a202c; background: #f7fafc; }
+        :root { --primary: #2c5282; --accent: #d69e2e; --light: #edf2f7; --dark: #1a202c; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        .header { background: white; border-bottom: 3px solid var(--accent); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: bold; color: var(--primary); text-decoration: none; }
+        .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        .nav-links a:hover { color: var(--accent); }
+        .header-cta { background: var(--accent); color: var(--dark); padding: 8px 20px; border-radius: 4px; font-weight: bold; text-decoration: none; }
+        
+        /* Hero */
+        .hero { background: linear-gradient(rgba(26, 32, 44, 0.9), rgba(26, 32, 44, 0.9)); color: white; padding: 100px 0; text-align: center; }
+        .hero h1 { font-size: 3em; margin-bottom: 20px; }
+        .price-badge { background: var(--accent); color: var(--dark); padding: 15px 30px; border-radius: 4px; font-size: 2em; font-weight: bold; display: inline-block; margin: 20px 0; }
+        .hero-cta { background: var(--accent); color: var(--dark); padding: 15px 40px; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 20px; }
+        
+        /* Sections */
+        section { padding: 80px 0; }
+        .section-title { text-align: center; font-size: 2.2em; margin-bottom: 50px; color: var(--primary); }
+        .section-title:after { content: ''; display: block; width: 80px; height: 3px; background: var(--accent); margin: 15px auto; }
+        
+        /* Features Preview */
+        .features-preview { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .feature-preview { text-align: center; padding: 30px; background: white; border-radius: 8px; border: 1px solid #e2e8f0; }
+        
+        /* Footer */
+        .footer { background: var(--dark); color: white; padding: 40px 0; text-align: center; }
+        
+        @media (max-width: 768px) {
+            .header-content { flex-wrap: wrap; gap: 10px; }
+            .nav-links { order: 3; width: 100%; justify-content: center; margin-top: 10px; }
+            .hero h1 { font-size: 2.2em; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo"><i class="fas fa-gavel"></i> honey.<span>law</span></a>
+            <nav class="nav-links">
+                <a href="features.html">Features</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="case-studies.html">Case Studies</a>
+            </nav>
+            <a href="pricing.html" class="header-cta">Start Trial</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>The AI Jury Intelligence Platform for Trial Lawyers</h1>
+            <p style="font-size: 1.3em; margin-bottom: 30px; color: #cbd5e0;">Stop relying on gut instinct. Start winning with data-driven jury selection.</p>
+            <div class="price-badge">$99<span style="font-size: 0.5em; margin-left: 10px;">/month</span></div>
+            <p>Join 1,200+ trial lawyers who trust honey.law for their most important cases</p>
+            <a href="pricing.html" class="hero-cta">
+                <i class="fas fa-play-circle"></i> Start Your 14-Day Free Trial
+            </a>
+        </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="problem">
+        <div class="container">
+            <h2 class="section-title">The Jury Selection Problem</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.2em; margin-bottom: 40px;">Trial lawyers waste 15-20 hours researching jurors manually, relying on unreliable intuition, and risking costly mistakes with every case.</p>
+                <a href="how-it-works.html" class="hero-cta">See How Honey.law Solves This</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Preview -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Platform Features</h2>
+            <div class="features-preview">
+                <div class="feature-preview">
+                    <div style="font-size: 2.5em; color: var(--primary); margin-bottom: 15px;"><i class="fas fa-brain"></i></div>
+                    <h3>AI Bias Prediction</h3>
+                    <p>94% accuracy in predicting juror biases using advanced machine learning.</p>
+                </div>
+                <div class="feature-preview">
+                    <div style="font-size: 2.5em; color: var(--primary); margin-bottom: 15px;"><i class="fas fa-bolt"></i></div>
+                    <h3>Instant Analysis</h3>
+                    <p>Get comprehensive juror profiles in minutes, not hours.</p>
+                </div>
+                <div class="feature-preview">
+                    <div style="font-size: 2.5em; color: var(--primary); margin-bottom: 15px;"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Ethical & Compliant</h3>
+                    <p>100% compliant with legal and ethical guidelines.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="features.html" class="hero-cta">View All Features</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Preview -->
+    <section class="case-studies" style="background: var(--light);">
+        <div class="container">
+            <h2 class="section-title">Trial Lawyer Success Stories</h2>
+            <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.2em; margin-bottom: 30px;">"Honey.law identified a pro-defense juror that my team had overlooked. That juror became the holdout that led to a hung jury and eventual dismissal."</p>
+                <p style="font-weight: bold; color: var(--primary);">Sarah M., Criminal Defense Attorney</p>
+                <div style="margin-top: 30px;">
+                    <a href="case-studies.html" class="hero-cta">Read More Case Studies</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing CTA -->
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">Simple Monthly Subscription</h2>
+            <div style="text-align: center;">
+                <div style="font-size: 3.5em; color: var(--primary); font-weight: bold; margin: 20px 0;">$99<span style="font-size: 0.4em; margin-left: 5px;">/month</span></div>
+                <p style="font-size: 1.2em; margin-bottom: 30px; color: #718096;">Cancel anytime. No long-term contracts.</p>
+                <a href="pricing.html" class="hero-cta" style="font-size: 1.2em; padding: 15px 50px;">
+                    <i class="fas fa-play-circle"></i> Start Your 14-Day Free Trial
+                </a>
+                <p style="margin-top: 20px; color: #718096; font-size: 0.9em;">No credit card required for trial</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div style="font-size: 1.8em; font-weight: bold; margin-bottom: 20px; color: white;"><i class="fas fa-gavel"></i> honey.<span style="color: var(--accent);">law</span></div>
+            <p>© 2026 Honey.law. All rights reserved.</p>
+            <p style="margin-top: 10px; color: #cbd5e0; font-size: 0.9em;">AI-Powered Jury Intelligence for Trial Lawyers</p>
+            <div style="margin-top: 20px;">
+                <a href="index.html" style="color: #cbd5e0; margin: 0 10px; text-decoration: none;">Home</a>
+                <a href="features.html" style="color: #cbd5e0; margin: 0 10px; text-decoration: none;">Features</a>
+                <a href="how-it-works.html" style="color: #cbd5e0; margin: 0 10px; text-decoration: none;">How It Works</a>
+                <a href="pricing.html" style="color: #cbd5e0; margin: 0 10px; text-decoration: none;">Pricing</a>
+                <a href="case-studies.html" style="color: #cbd5e0; margin: 0 10px; text-decoration: none;">Case Studies</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
