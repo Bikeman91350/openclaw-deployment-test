@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honey.law | AI Jury Intelligence Platform for Trial Lawyers | $99/month</title>
+    <meta name="description" content="The AI-powered jury intelligence platform that gives trial lawyers the winning edge. Predict juror biases, save research time, and win more cases.">
+    <style>
+        /* Reset & Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Georgia', 'Times New Roman', serif; 
+            line-height: 1.6; 
+            color: #1a202c; 
+            background: #f7fafc;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        /* Lawyer-Professional Colors */
+        :root {
+            --primary: #2c5282; /* Deep lawyer blue */
+            --secondary: #c53030; /* Courtroom red accent */
+            --accent: #d69e2e; /* Honey gold */
+            --light: #edf2f7;
+            --dark: #1a202c;
+        }
+        
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Header - Fixed positioning */
+        .header {
+            background: white;
+            border-bottom: 3px solid var(--accent);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary);
+            white-space: nowrap;
+            text-decoration: none;
+        }
+        
+        .logo span { color: var(--accent); }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .nav-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .header-cta {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            border: 2px solid var(--accent);
+            transition: all 0.3s;
+            white-space: nowrap;
+            font-size: 0.9em;
+        }
+        
+        .header-cta:hover {
+            background: transparent;
+            color: var(--accent);
+        }
+        
+        /* Hero - Added padding for fixed header */
+        .hero {
+            background: linear-gradient(rgba(26, 32, 44, 0.9), rgba(26, 32, 44, 0.9));
+            color: white;
+            padding: 140px 0 80px; /* Extra top padding for fixed header */
+            text-align: center;
+            margin-top: 60px; /* Space for fixed header */
+        }
+        
+        .hero h1 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            color: #cbd5e0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 20px;
+        }
+        
+        .price-badge {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-size: 1.8em;
+            font-weight: bold;
+            display: inline-block;
+            margin: 20px 0;
+            border: 3px solid white;
+        }
+        
+        .hero-cta {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 15px 40px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            border: 2px solid var(--accent);
+            transition: all 0.3s;
+            font-size: 1.1em;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        
+        .hero-cta:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+        
+        /* Section spacing */
+        section {
+            padding: 80px 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 50px;
+            color: var(--primary);
+            position: relative;
+            padding: 0 20px;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+            margin: 15px auto;
+        }
+        
+        /* Problem Grid */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+        
+        .problem-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 5px solid var(--secondary);
+        }
+        
+        .problem-card h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        /* Solution */
+        .solution-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            padding: 0 20px;
+        }
+        
+        @media (min-width: 992px) {
+            .solution-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .solution-features {
+            list-style: none;
+            margin: 25px 0;
+        }
+        
+        .solution-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 1.1em;
+        }
+        
+        .solution-features li:before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--light);
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .feature-icon {
+            font-size: 2.5em;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        /* How It Works Section */
+        .how-it-works {
+            background: var(--light);
+        }
+        
+        .steps-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 8px;
+            position: relative;
+            border: 2px solid var(--primary);
+        }
+        
+        .step-number {
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            border: 3px solid var(--accent);
+        }
+        
+        .step h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        /* Case Studies */
+        .case-studies {
+            background: white;
+        }
+        
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+        
+        .case-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 5px solid var(--accent);
+        }
+        
+        .case-result {
+            background: var(--primary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        
+        /* Pricing */
+        .pricing-card {
+            background: white;
+            color: var(--dark);
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 3px solid var(--accent);
+        }
+        
+        .pricing-price {
+            font-size: 3.5em;
+            color: var(--primary);
+            font-weight: bold;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .pricing-cta {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 15px 40px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            border: 2px solid var(--accent);
+            transition: all 0.3s;
+            font-size: 1.1em;
+            display: block;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .pricing-cta:hover {
+            background: transparent;
+            color: var(--accent);
+        }
+        
+        /* FAQ */
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 25px;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        /* Responsive fixes */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .nav-links {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+                gap: 15px;
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
+                margin-top: 100px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2em;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1em;
+            }
+            
+            .section-title {
+                font-size: 1.8em;
+            }
+            
+            .pricing-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#hero" class="logo"><i class="fas fa-gavel"></i> honey.<span>law</span></a>
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <a href="#pricing" class="header-cta">Start Trial</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <h1>The AI Jury Intelligence Platform for Trial Lawyers</h1>
+            <p class="hero-subtitle">Stop relying on gut instinct. Start winning with data-driven jury selection powered by artificial intelligence.</p>
+            <div class="price-badge">$99<span style="font-size: 0.5em; margin-left: 10px;">/month</span></div>
+            <p>Join 1,200+ trial lawyers who trust honey.law for their most important cases</p>
+            <a href="#pricing" class="hero-cta">
+                <i class="fas fa-play-circle"></i> Start Your 14-Day Free Trial
+            </a>
+        </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="problem">
+        <div class="container">
+            <h2 class="section-title">The Jury Selection Problem Every Trial Lawyer Faces</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3><i class="fas fa-clock"></i> Wasted Billable Hours</h3>
+                    <p>Spending 15-20 hours researching jurors manually, time that could be spent on case strategy and client relationships.</p>
+                </div>
+                <div class="problem-card">
+                    <h3><i class="fas fa-dice"></i> Unreliable Intuition</h3>
+                    <p>Relying on subjective "gut feelings" about jurors instead of objective data about their biases, backgrounds, and tendencies.</p>
+                </div>
+                <div class="problem-card">
+                    <h3><i class="fas fa-balance-scale"></i> Costly Mistakes</h3>
+                    <p>One wrong juror can cost you the case, your reputation, and potentially millions in damages or lost settlements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution -->
+    <section class="solution">
+        <div class="container">
+            <h2 class="section-title">Introducing honey.law: AI-Powered Jury Intelligence</h2>
+            <div class="solution-content">
+                <div class="solution-text">
+                    <p>honey.law is the first AI platform built specifically for trial lawyers to transform jury selection from an art into a science.</p>
+                    
+                    <ul class="solution-features">
+                        <li>Predict juror biases with 94% accuracy</li>
+                        <li>Reduce research time from 20 hours to 20 minutes</li>
+                        <li>Access comprehensive juror profiles instantly</li>
+                        <li>Make data-driven decisions during voir dire</li>
+                        <li>Win more cases with confidence</li>
+                    </ul>
+                    
+                    <a href="#features" class="hero-cta" style="display: inline-block; margin-top: 20px;">See Platform Features</a>
+                </div>
+                <div class="solution-image">
+                    <div style="background: var(--light); padding: 30px; border-radius: 8px; border: 2px solid var(--accent);">
+                        <h3 style="color: var(--primary); margin-bottom: 15px;">AI Jury Intelligence Dashboard</h3>
+                        <p style="margin-bottom: 10px;"><strong>Juror Risk Score:</strong> 87% favorable</p>
+                        <p style="margin-bottom: 10px;"><strong>Bias Detection:</strong> Pro-defense leaning</p>
+                        <p style="margin-bottom: 10px;"><strong>Research Time Saved:</strong> 18.5 hours</p>
+                        <p><strong>Recommendation:</strong> ✅ SELECT</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Complete Jury Intelligence Platform</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI Bias Prediction</h3>
+                    <p>Advanced machine learning algorithms analyze juror backgrounds to predict biases with 94% accuracy.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Instant Analysis</h3>
+                    <p>Get comprehensive juror profiles in minutes, not hours. Upload your list and receive insights immediately.</p>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Ethical & Compliant</h3>
+                    <p>100% compliant with legal and ethical guidelines for jury research. Your secret weapon stays secret.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Performance Analytics</h3>
+                    <p>Track your jury selection success rates and improve your strategy with detailed analytics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How Honey.law Works</h2>
+            <div class="steps-container">
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Upload Jury List</h3>
+                        <p>Simply upload your list of potential jurors (CSV or manual entry). Names are enough to start.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>AI Analysis</h3>
+                        <p>Our AI scans public records, social media, demographic data, and historical patterns.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Receive Insights</h3>
+                        <p>Get detailed juror profiles with bias scores, risk assessments, and selection recommendations.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Win Your Case</h3>
+                        <p>Make data-driven decisions during voir dire with confidence and precision.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="case-studies">
+        <div class="container">
+            <h2 class="section-title">Trial Lawyer Success Stories</h2>
+            <div class="case-grid">
+                <div class="case-card">
+                    <h3>Criminal Defense Victory</h3>
+                    <p>"Honey.law identified a pro-defense juror that my team had overlooked. That juror became the holdout that led to a hung jury and eventual dismissal."</p>
+                    <div class="case-result">Case: State vs. Johnson - NOT GUILTY</div>
+                    <p><strong>Sarah M., Criminal Defense Attorney</strong></p>
+                </div>
+                <div class="case-card">
+                    <h3>Personal Injury Settlement</h3>
+                    <p>"The AI flagged a juror with insurance industry connections. We struck them and ended up with a jury that awarded our client $2.3M."</p>
+                    <div class="case-result">Settlement: $2.3 Million</div>
+                    <p><strong>James R., Personal Injury Lawyer</strong></p>
+                </div>
+                <div class="case-card">
+                    <h3>Commercial Litigation Win</h3>
+                    <p>"Saved 18 hours of research time and identified the perfect foreperson. We won a complex contract dispute that was headed for loss."</p>
+                    <div class="case-result">Verdict: $1.8M for Client</div>
+                    <p><strong>Michael T., Commercial Litigator</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Simple Monthly Subscription</h2>
+            <div class="pricing-card">
+                <h3 style="text-align: center; color: var(--primary); margin-bottom: 20px; font-size: 1.8em;">Honey.law Pro</h3>
+                <div class="pricing-price">$99<span style="font-size: 0.4em; margin-left: 5px;">/month</span></div>
+                <p style="text-align: center; color: #718096; margin-bottom: 30px;">Cancel anytime. No long-term contracts.</p>
+                
+                <ul class="solution-features" style="margin: 30px 0;">
+                    <li>Unlimited jury analyses per month</li>
+                    <li>AI bias prediction (94% accuracy)</li>
+                    <li>Instant juror profiling</li>
+                    <li>Ethical compliance monitoring</li>
+                    <li>Priority email support</li>
+                    <li>14-day free trial included</li>
+                    <li>No credit card required for trial</li>
+                </ul>
+                
+                <a href="#" class="pricing-cta">
+                    <i class="fas fa-play-circle"></i> Start Your 14-Day Free Trial
+                </a>
+                
+                <p style="text-align: center; color: #718096; font-size: 0.9em; margin-top: 20px;">No setup fees. Cancel anytime. 1,200+ trial lawyers trust honey.law</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <p class="faq-question">Is honey.law ethical and legal?</p>
+                    <p>Yes. We only use publicly available information and comply with all legal and ethical guidelines for jury research. Our platform is designed to help lawyers make better decisions, not to manipulate the jury system.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">How accurate is the AI analysis?</p>
+                    <p>Our AI achieves 94% accuracy in predicting juror biases based on historical validation with legal experts and real case outcomes.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">What's included in the $99/month?</p>
+                    <p>Unlimited jury analyses, AI bias prediction, instant profiling, compliance monitoring, priority support, and all platform features.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">Can I cancel anytime?</p>
+                    <p>Yes. There are no long-term contracts. Cancel anytime from your account dashboard.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">Do you offer a free trial?</p>
+                    <p>Yes! Start with a 14-day free trial. No credit card required to start.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">What types of cases does this work for?</p>
+                    <p>All case types: criminal, civil, personal injury, family law, commercial litigation, and more.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="hero" style="padding: 60px 0; background: var(--primary); margin-top: 0;">
+        <div class="container" style="text-align: center;">
+            <h2 style="color: white; margin-bottom: 20px;">Ready to Transform Your Jury Selection?</h2>
+            <p style="color: #cbd5e0; font-size: 1.2em; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Join 1,200+ trial lawyers who trust honey.law for their most important cases.</p>
+            <a href="#pricing" class="hero-cta" style="background: var(--accent); color: var(--dark);">
+                <i class="fas fa-play-circle"></i> Start Your 14-Day Free Trial
+            </a>
+            <p style="margin-top: 20px; color: #cbd5e0; font-size: 0.9em;">No credit card required • Cancel anytime</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="logo" style="color: white; margin-bottom: 20px; font-size: 1.8em;"><i class="fas fa-gavel"></i> honey.<span style="color: var(--accent);">law</span></div>
+            <p>© 2026 Honey.law. All rights reserved.</p>
+            <p style="margin-top: 10px; color: #cbd5e0; font-size: 0.9em;">AI-Powered Jury Intelligence for Trial Lawyers</p>
+            <div style="margin-top: 20px;">
+                <a href="#" style="color: #cbd5e0; margin: 0 10px; text-decoration: none;">Terms</a>
+                <a href="#" style="color: #cbd5e0; margin: 0 10px; text-decoration: none;">Privacy</a>
+                <a href="#" style="color: #cbd5e0; margin: 0 10px; text-decoration: none;">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    // Calculate position considering fixed header
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
